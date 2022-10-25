@@ -11,7 +11,7 @@ except socket.error:
     print("Failed to create socket")
 
 host = "localhost"
-port = 8888
+port = 9822
 
 
 def send_with_timeout_corruption(sock, packet, timeout):

@@ -88,9 +88,9 @@ while True:
     )
 
     # udt_send(sndpkt) and start_timer
-    thread = start_thread(send_with_timeout, (s, packet, 1))
-    # print("DEMO PART 2: PACKET LOSS")
-    # thread = start_thread(send_with_timeout_corruption, (s, packet, 1))
+    # thread = start_thread(send_with_timeout, (s, packet, 1))
+    print("DEMO PART 2: PACKET LOSS")
+    thread = start_thread(send_with_timeout_corruption, (s, packet, 1))
     thread.start()
 
     ########################### WAIT FOR ACK 1 ###########################

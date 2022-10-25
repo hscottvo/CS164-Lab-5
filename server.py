@@ -29,8 +29,8 @@ while True:
     # skip corrupt case for now
     ########################### WAIT FOR 0 ###########################
     d = s.recvfrom(1024)
-    # print("DEMO PART 3: TIMEOUT")
-    # sleep(3)
+    print("DEMO PART 3: TIMEOUT")
+    sleep(3)
     data = d[0].decode("utf-8")
     addr = d[1]
     if not data:

@@ -50,7 +50,9 @@ while True:
         s.sendto(b"", (host, port))
         break
     packet = make_pkt(0, data)
-
+    print(
+        f"Message[Client] - \n\t\t\tPacket: {packet}\n\t\t\tData: {parse_packet(packet)['data']}\n\t\t\tAck: {parse_packet(packet)['ack']}"
+    )
     # udt_send(sndpkt) and start_timer
     thread = start_thread(send_with_timeout, (s, packet, 1))
     thread.start()
@@ -81,11 +83,14 @@ while True:
         s.sendto(b"", (host, port))
         break
     packet = make_pkt(1, data)
+    print(
+        f"Message[Client] - \n\t\t\tPacket: {packet}\n\t\t\tData: {parse_packet(packet)['data']}\n\t\t\tAck: {parse_packet(packet)['ack']}"
+    )
 
     # udt_send(sndpkt) and start_timer
-    # thread = start_thread(send_with_timeout, (s, packet, 1))
-    print("DEMO PART 2: PACKET LOSS")
-    thread = start_thread(send_with_timeout_corruption, (s, packet, 1))
+    thread = start_thread(send_with_timeout, (s, packet, 1))
+    # print("DEMO PART 2: PACKET LOSS")
+    # thread = start_thread(send_with_timeout_corruption, (s, packet, 1))
     thread.start()
 
     ########################### WAIT FOR ACK 1 ###########################

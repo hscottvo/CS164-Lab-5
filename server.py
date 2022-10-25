@@ -6,7 +6,7 @@ from time import sleep
 from random import randint
 
 host = ""
-port = 8888
+port = 9822
 
 try:
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
